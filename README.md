@@ -1,6 +1,6 @@
 # Dataplane router
 
-În acest repository am implementat dataplane-ul unui router capabil să dirijeze pachete, să identifice și să trimită pachete de tip ARP și ICMP. Partea de dirijare, ARP și ICMP sunt implementate în fișierul router.c, iar partea de LPM se află în fișierele trie.c și trie.h. Când router-ul primește un pachet, acesta extrage headerul Ethernet și verifică tipul pachetului (daca este de tip ARP sau IP).
+În acest repository am implementat dataplane-ul unui router capabil să dirijeze pachete, să identifice și să trimită pachete de tip ARP și ICMP. Partea de dirijare, ARP și ICMP sunt implementate în fișierul router.c, iar partea de LPM (Longest Prefix Match) se află în fișierele trie.c și trie.h. Când router-ul primește un pachet, acesta extrage headerul Ethernet și verifică tipul pachetului (daca este de tip ARP sau IP).
 
 - Dacă pachetul este de tip IP și checksum-ul este cel corespunzător, router-ul verifică:
   - dacă pachetul este destinat lui (ip == ip_hdr->daddr, unde ip este adresa routerului obținută
